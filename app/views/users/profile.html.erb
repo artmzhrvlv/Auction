@@ -1,2 +1,10 @@
-<h1>Users#profile</h1>
-<p>Find me in app/views/users/profile.html.erb</p>
+<h1>Users profile</h1>
+<%= image_tag(@user.avatar_url, height: '200', width: '200') unless @user.avatar_url == nil %>
+<div><%= @user.email %></div>
+<div><%= @user.full_name %></div>
+<div><%= l(@user.created_at, format: :short) %> </div>
+<%= link_to "Edit", controller: "users", action: "edit", id: @user %>
+<%= button_to "Remove user", user_path(@user), 
+      method: :delete, title:'Delete' %>
+<p>------------------------------------------------------</p>
+<div><%= link_to "Main page", root_path %></div>

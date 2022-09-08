@@ -1,0 +1,7 @@
+
+<div><%= image_tag(user.avatar_url, height: '100', width: '100') unless user.avatar_url == nil %>
+
+<%= user.email %>
+<%= user.full_name %>
+<%= l(user.created_at, format: :short) %> </div>
+
