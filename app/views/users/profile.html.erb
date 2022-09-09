@@ -3,8 +3,11 @@
 <div><%= @user.email %></div>
 <div><%= @user.full_name %></div>
 <div><%= l(@user.created_at, format: :short) %> </div>
-<%= link_to "Edit", controller: "users", action: "edit", id: @user %>
-<%= button_to "Remove user", user_path(@user), 
-      method: :delete, title:'Delete' %>
+
+<%= link_to 'Edit', edit_user_registration_path %>
+   
+<%= button_to "Remove user", registration_path(current_user),
+      data: { confirm: "Are you sure?" }, method: :delete %></p>   
+      
 <p>------------------------------------------------------</p>
 <div><%= link_to "Main page", root_path %></div>
