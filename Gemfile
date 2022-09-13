@@ -31,10 +31,14 @@ gem 'devise'
 
 gem 'omniauth'
 
-gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
-gem "omniauth-rails_csrf_protection", "~> 1.0"
+#gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
+gem "omniauth-google-oauth2"
+gem 'activerecord-session_store'
+
+gem "omniauth-rails_csrf_protection"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

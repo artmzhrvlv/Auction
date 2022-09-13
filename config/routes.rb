@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show] 
   end
   devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',
-    passwords: 'users/passwords',
-    sessions: 'users/sessions',
-    omniauth_callbacks: 'users/omniauth_callbacks'}
+    sessions: 'users/sessions'
+    }
 end

@@ -1,24 +1,7 @@
-# README
+face 
+3374705679424255
+9a8ab7fdf46d45008fcdc0f501222eda
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+git 
+f8a5d501ab98456342f3 
+dd62484530105cad45220ed2c49a51c93af87458

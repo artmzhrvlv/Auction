@@ -27,7 +27,7 @@ Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   config.omniauth :google_oauth2, '993036108665-nr1m5316ig8jekvfn83hre91vgp19h2h.apps.googleusercontent.com', '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', {}
-
+  
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -273,7 +273,8 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :facebook, Rails.application.credentials.dig(:facebook, :facebook_client_id),
+  Rails.application.credentials.dig(:facebook, :facebook_client_secret), scope: 'public_profile, email'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
