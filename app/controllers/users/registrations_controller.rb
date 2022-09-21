@@ -31,14 +31,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update_resource(resource, params)
     if resource.provider == 'google_oauth2'
-      params.delete('current_password')
+      params.delete('current password')
       resource.password = params['password']
-
-      resource.update_without_password(params)
+      resource.ivebeenupdated = true
+      resource.update_without_passwords(params)
     else
-      resource.update_with_password(params)
+      resource.update_with_passwords(params)
     end
   end
+
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to

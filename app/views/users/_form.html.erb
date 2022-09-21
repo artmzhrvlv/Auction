@@ -1,0 +1,7 @@
+  <%= form_with model: user do |form| %>
+    <p><%= form.label :full_name, 'Full name: '  %></p>
+    <p><%= form.text_field :full_name %></p>
+    <p><%= form.label :avatar_url, 'Avatar url: ' %></p>
+    <p><%= form.text_field :avatar_url %></p>
+    <p><%= form.submit 'Save'%></p>
+  <% end %>
