@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   root 'pages#home' 
   get 'profile', action: :profile, controller: 'users'
-  scope :user do
-    resources :users 
-  end
-  devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    sessions: 'users/sessions',
-    omniauth_callbacks: 'users/omniauth_callbacks'}
+  resources :users
+  get 'profile/edit', action: :edit, controller: 'users'
+  devise_for :users, path: '', path_names: {
+    sign_in: 'login', sign_out: 'logout',
+    password: 'secret', confirmation: 'verification',
+    unlock: 'unblock', registration: 'registration',
+    sign_up: 'signup'}, controllers: { 
+      omniauth_callbacks: 'users/omniauth_callbacks',
+      registrations: 'users/registrations',
+      passwords: 'users/passwords' }
+  
 end

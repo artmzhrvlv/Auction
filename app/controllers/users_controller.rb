@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-
+    
   end
 
   def update

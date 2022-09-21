@@ -3,8 +3,10 @@
 <div><%= @user.email %></div>
 <div><%= @user.full_name %></div>
 <div><%= l(@user.created_at, format: :short) %> </div>
-<%= link_to "Edit", controller: "users", action: "edit", id: @user %>
-<%= button_to "Remove user", user_path(@user), 
-      method: :delete, title:'Delete' %>
+<%= link_to "Edit account", profile_edit_path, id: @user %>
+<div><%= link_to "Change my password or email", edit_user_registration_path unless @user.provider == "google_oauth2" %></div>
+
+<%= button_to "Remove my account", registration_path(@user),
+ data: { confirm: "Are you sure?" }, method: :delete %>
 <p>------------------------------------------------------</p>
 <div><%= link_to "Main page", root_path %></div>
