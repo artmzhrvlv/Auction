@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root 'pages#home' 
   get 'profile', action: :profile, controller: 'users'
-  resources :users
+  resources :users do 
+    get 'admin_edit', on: :member
+  end
   get 'profile/edit', action: :edit, controller: 'users'
+
   devise_for :users, path: '', path_names: {
     sign_in: 'login', sign_out: 'logout',
     password: 'secret', confirmation: 'verification',

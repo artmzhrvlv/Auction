@@ -1,3 +1,9 @@
 <div><%= @user.id %></div>
 <div><%= render @user %></div>
+<% if policy(@user).admin_edit? %>
+  <div><%= link_to "Edit user", admin_edit_user_path(@user) %>
+  <%= button_to "Remove this user", user_path(@user),
+  data: { confirm: "Are you sure?" }, method: :delete %> </div>
+<% end %>
+<p>---------------------------------------------------------------------</p>
 <div><%= link_to "All users", users_path %></div>
